@@ -2,78 +2,52 @@
 {
     using System;
     using System.Windows;
-    using System.Windows.Controls;
-    using System.Windows.Media;
-    using System.Windows.Shapes;
 
-    internal class PlayerTank : IUpdatable
+    internal class PlayerTank : GameObject, IUpdatable
     {
-        PlayerInput _input = new PlayerInput();
-        Canvas _gameCanvas = MainWindow.Instance.GameCanvas;
-        public readonly Rectangle body;
-        public readonly Rectangle turret;
+        public readonly PlayerInput input = new PlayerInput();
+        //public readonly Turret turret = new Turret();
 
-        Vector2 _position;
+        readonly IRenderer _renderer;
 
-        public double Speed = 1; // pixels per second
-        public double RotationAngle { get; private set; }
-
-        public PlayerTank()
-        {
-            body = new Rectangle
-            {
-                Width = 40,
-                Height = 40,
-                Fill = Brushes.Green
-            };
-
-            turret = new Rectangle
-            {
-                Width = 40,
-                Height = 10,
-                Fill = Brushes.DarkGreen,
-                RenderTransformOrigin = new Point(0, 0.5)
-            };
-
-            _position = new Vector2(500, 350);
-
-            _gameCanvas.Children.Add(body);
-            _gameCanvas.Children.Add(turret);
-        }
+        public double Speed = 150; // pixels per second
+        public double TurretRotation { get; private set; } // 
 
         public void Move(Vector2 direction)
         {
             if (direction == Vector2.Zero) return;
-            _position += direction * Speed * GameLoop.DeltaTime;  
+            Position += direction * Speed * GameLoop.DeltaTime;
         }
 
         public void Update()
         {
-            Canvas.SetLeft(body, _position.x);
-            Canvas.SetTop(body, _position.y);
-
-            Canvas.SetLeft(turret, _position.x + body.Width / 2);
-            Canvas.SetTop(turret, _position.y + body.Height / 2 - turret.Height / 2);
-
-            turret.RenderTransform = new RotateTransform(RotationAngle * 180 / Math.PI);
+            Move(input.MoveDirection);
+            AimAt(input.MousePosition);
         }
 
         public void AimAt(Point mousePos)
         {
-            double centerX = _position.x + body.Width / 2;
-            double centerY = _position.y + body.Height / 2;
+            //double centerX = Position.x + body.Width / 2;
+            //double centerY = Position.y + body.Height / 2;
 
-            double dx = mousePos.X - centerX;
-            double dy = mousePos.Y - centerY;
+            //double dx = mousePos.X - centerX;
+            //double dy = mousePos.Y - centerY;
 
-            RotationAngle = Math.Atan2(dy, dx);
+            //turret.Rotation = Math.Atan2(dy, dx);
         }
 
-        public Point GetGunPosition()
-        {
-            double gx = _position.x + 20 + Math.Cos(RotationAngle) * 30;
-            double gy = _position.y + 20 + Math.Sin(RotationAngle) * 30;
-            return new Point(gx, gy);
-        }
+        //public void Shoot()
+        //{
+        //    Point gunPos = GetGunPosition();
+        //    var bullet = new Bullet(new Vector2(gunPos.X, gunPos.Y), turret.Rotation);
+        //    //GameLoop.Instance.AddEntity(bullet);
+        //}
+
+        //public Point GetGunPosition()
+        //{
+        //    double gx = Position.x + 20 + Math.Cos(turret.Rotation) * 30;
+        //    double gy = Position.y + 20 + Math.Sin(turret.Rotation) * 30;
+        //    return new Point(gx, gy);
+        //}
     }
 }

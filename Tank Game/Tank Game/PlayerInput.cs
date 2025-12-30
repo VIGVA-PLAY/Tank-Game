@@ -1,16 +1,37 @@
-﻿namespace Tank_Game
+﻿using System.Windows;
+using System.Windows.Input;
+
+namespace Tank_Game
 {
-    internal class PlayerInput : IUpdatable
+    internal class PlayerInput
     {
-        public bool MoveForward { get; set; }
-        public bool MoveBackward { get; set; }
-        public bool TurnLeft { get; set; }
-        public bool TurnRight { get; set; }
-        public bool Fire { get; set; }
+        public Point MousePosition { get; set; }
+        public bool isFirePressed;
 
-        public void Update()
+        readonly HashSet<Key> _keys = new();
+
+        public Vector2 MoveDirection
         {
+            get
+            {
+                Vector2 dir = Vector2.Zero;
 
+                if (_keys.Contains(Key.W)) dir.y -= 1;
+                if (_keys.Contains(Key.S)) dir.y += 1;
+                if (_keys.Contains(Key.A)) dir.x -= 1;
+                if (_keys.Contains(Key.D)) dir.x += 1;
+
+                if (dir.sqrMagnitude > 0)
+                    dir.Normalize();
+
+                return dir;
+            }
         }
+
+        public void KeyDown(Key key) => _keys.Add(key);
+        public void KeyUp(Key key) => _keys.Remove(key);
+
+
+        public void MouseDown() => isFirePressed = true;
     }
 }

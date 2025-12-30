@@ -18,3 +18,24 @@ C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank Game\Tan
 C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank Game\Tank Game\obj\Debug\net9.0-windows\Tank Game.pdb
 C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank Game\Tank Game\obj\Debug\net9.0-windows\Tank Game.genruntimeconfig.cache
 C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank Game\Tank Game\obj\Debug\net9.0-windows\ref\Tank Game.dll
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\bin\Debug\net9.0-windows\Tank Game.exe
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\bin\Debug\net9.0-windows\Tank Game.deps.json
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\bin\Debug\net9.0-windows\Tank Game.runtimeconfig.json
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\bin\Debug\net9.0-windows\Tank Game.dll
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\bin\Debug\net9.0-windows\Tank Game.pdb
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\MainWindow.g.cs
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\App.g.cs
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\Tank Game_MarkupCompile.cache
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\Tank Game_MarkupCompile.lref
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\MainWindow.baml
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\Tank Game.g.resources
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\Tank Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\Tank Game.AssemblyInfoInputs.cache
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\Tank Game.AssemblyInfo.cs
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\Tank Game.csproj.CoreCompileInputs.cache
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\Tank Game.sourcelink.json
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\Tank Game.dll
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\refint\Tank Game.dll
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\Tank Game.pdb
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\Tank Game.genruntimeconfig.cache
+C:\My Files\My Created Programs\C# console apps\Microsoft homework\Tank-Game\Tank Game\Tank Game\obj\Debug\net9.0-windows\ref\Tank Game.dll

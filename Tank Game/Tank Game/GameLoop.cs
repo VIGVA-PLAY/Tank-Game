@@ -8,13 +8,29 @@ namespace Tank_Game
         void Update();
     }
 
-    internal class GameLoop
+    internal interface IAwakeable
+    {
+        void Awake();
+    }
+
+    internal sealed class GameLoop
     {
         const int TargetFPS = 60;
         DispatcherTimer _gameTimer;
         Stopwatch _stopwatch = new Stopwatch();
-        public static double DeltaTime {get; private set; }
+        public static double DeltaTime {get; private set;}
+        bool allAwakeablesAwake = false;
 
+        #region Singleton
+        static readonly Lazy<GameLoop> _instance = 
+            new Lazy<GameLoop>(() => new GameLoop());
+
+        GameLoop() { }
+
+        public static GameLoop Instance => _instance.Value;
+        #endregion
+
+        readonly List<IAwakeable> awakeables = new List<IAwakeable>();
         readonly List<IUpdatable> updatables = new List<IUpdatable>();
 
         void InitializeTimer()
@@ -26,7 +42,7 @@ namespace Tank_Game
             _gameTimer.Start();
         }
 
-        public void Start()
+        public void Run()
         {
             InitializeTimer();
         }
@@ -38,6 +54,27 @@ namespace Tank_Game
 
             foreach (var updatable in updatables)
                 updatable.Update();
+        }
+
+        public void AwakeAll()
+        {
+            if (allAwakeablesAwake) return;
+
+            foreach (var awakeable in awakeables)
+                awakeable.Awake();
+            allAwakeablesAwake = true;
+        }
+
+        public void RegisterAwakeable(IAwakeable awakeable)
+        {
+            if (!awakeables.Contains(awakeable))
+                awakeables.Add(awakeable);
+        }
+
+        public void UnregisterAwakeable(IAwakeable awakeable)
+        {
+            if (awakeables.Contains(awakeable))
+                awakeables.Remove(awakeable);
         }
 
         public void RegisterUpdatable(IUpdatable updatable)

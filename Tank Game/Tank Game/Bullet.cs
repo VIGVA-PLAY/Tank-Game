@@ -1,24 +1,32 @@
-﻿using System.Windows.Media;
-using System.Windows.Shapes;
+﻿using System.Windows.Shapes;
 
 namespace Tank_Game
 {
-    internal class Bullet
+    internal class Bullet : IUpdatable
     {
         public readonly Ellipse body;
 
-        double x;
-        double y;
+        public Vector2 Position { get; private set; }
 
         public double Speed { get; private set; } // pixels per second
-        public double RotationAngle { get; private set; }
+        public double Rotation { get; private set; } // radians
 
-
-        public Bullet(Vector2 pos)
+        public Bullet(Vector2 position, double rotation)
         {
-            this.x = x;
-            this.y = y;
-            //Speed = speed;
+            Position = position;
+            Rotation = rotation;
+
+            GameLoop.Instance.RegisterUpdatable(this);
+        }
+
+        public void Update()
+        {
+            Move();
+        }
+
+        void Move()
+        {
+            Position += Vector2.GetDirection(Rotation) * Speed * GameLoop.DeltaTime;
         }
     }
 }

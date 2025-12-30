@@ -11,16 +11,21 @@
             this.y = y;
         }
 
-        public Vector2 normalized {
+        public Vector2 normalized
+        {
             get
             {
-                double length = Math.Sqrt(x * x + y * y);
+                double length = magnitude;
                 if (length > Epsilon)
                     return new Vector2(x / length, y / length);
 
                 return new Vector2(0, 0);
             }
         }
+
+        public double magnitude => Math.Sqrt(x * x + y * y);
+        public double sqrMagnitude => x * x + y * y;
+        public double angle => Math.Atan2(y, x);
 
         public static Vector2 Zero => new(0, 0);
         public static Vector2 One => new(1, 1);
@@ -68,12 +73,17 @@
 
         public void Normalize()
         {
-            double length = Math.Sqrt(x * x + y * y);
+            double length = Length();
             if (length > Epsilon)
             {
                 x /= length;
                 y /= length;
             }
         }
+
+        public double Length() => Math.Sqrt(x * x + y * y);
+
+        public static Vector2 GetDirection(double angleRadians) =>
+             new Vector2(Math.Cos(angleRadians), Math.Sin(angleRadians));
     }
 }
