@@ -4,18 +4,38 @@
 
     internal abstract class GameObject : IDisposable
     {
-        public Vector2 Position;
-        public double Rotation; // in radians
+        Vector2 _position;
+        double _rotation;
 
-        protected GameObject()
+        public Vector2 Position
         {
-            
+            get => _position;
+            set
+            {
+                _position = value;
+                Renderer?.Update();
+            }
         }
+
+        public double Rotation
+        {
+            get => _rotation;
+            set
+            {
+                _rotation = value;
+                Renderer?.Update();
+            }
+        }
+
+        public abstract IRenderer Renderer { get; protected set; }
+
+        protected GameObject() { }
+
+        public abstract void Awake();
 
         public void Dispose()
         {
-           // if (renderer is IDisposable disposable)
-                //disposable.Dispose();
+            Renderer.Dispose();
         }
     }
 }

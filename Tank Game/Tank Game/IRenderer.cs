@@ -1,7 +1,13 @@
-﻿namespace Tank_Game
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tank_Game
 {
     internal interface IRenderer : IDisposable
     {
-        void Draw();
+        void Update();
     }
 }

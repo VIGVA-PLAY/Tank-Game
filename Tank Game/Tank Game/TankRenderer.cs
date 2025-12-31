@@ -1,37 +1,22 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using System.Windows;   
 
 namespace Tank_Game
 {
-    internal class TankRenderer : IRenderer
+    internal class TankRenderer : Renderer<PlayerTank, Rectangle>
     {
-        Canvas _gameCanvas = MainWindow.Instance.GameCanvas;
-        public readonly Rectangle body;
-        public readonly GameObject tank;
-
-        public TankRenderer()
+        public TankRenderer(PlayerTank gameObject) : base(gameObject)
         {
-            body = new Rectangle
-            {
-                Width = 40,
-                Height = 40,
-                Fill = Brushes.Green
-            };
-
-            _gameCanvas.Children.Add(body);
+            body.Width = 40;
+            body.Height = 40;
+            body.Fill = Brushes.Green;
         }
 
-        public void Draw()
+        public override void Update()
         {
-            Canvas.SetLeft(body, tank.Position.x);
-            Canvas.SetTop(body, tank.Position.y);
-        }
-
-        public void Dispose()
-        {
-            if (body != null) _gameCanvas.Children.Remove(body);
+            Canvas.SetLeft(body, gameObject.Position.x);
+            Canvas.SetTop(body, gameObject.Position.y);
         }
     }
 }

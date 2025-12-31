@@ -6,6 +6,7 @@ namespace Tank_Game
     public partial class MainWindow : Window
     {
         PlayerTank _player;
+        GameObjectFactory _gameObjectFactory = new GameObjectFactory();
 
         public static MainWindow Instance => (Application.Current.MainWindow as MainWindow)!;
 
@@ -14,8 +15,8 @@ namespace Tank_Game
             InitializeComponent();
             GameCanvas.Focus();
 
-            _player = new PlayerTank();
-            GameLoop.Instance.RegisterUpdatable(_player);
+            _player = _gameObjectFactory.Instantiate<PlayerTank>(new Vector2(500, 350));
+
             GameLoop.Instance.Run();
         }
 

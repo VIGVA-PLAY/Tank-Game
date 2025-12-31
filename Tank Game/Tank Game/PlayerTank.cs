@@ -1,17 +1,20 @@
 ﻿namespace Tank_Game
 {
-    using System;
     using System.Windows;
 
     internal class PlayerTank : GameObject, IUpdatable
     {
         public readonly PlayerInput input = new PlayerInput();
-        //public readonly Turret turret = new Turret();
+        public readonly Turret turret = new Turret();
+        public override IRenderer Renderer { get; protected set; }
 
-        readonly IRenderer _renderer;
+        public override void Awake()
+        {
+            Renderer = new TankRenderer(this);
+            Renderer.Update();
+        }
 
         public double Speed = 150; // pixels per second
-        public double TurretRotation { get; private set; } // 
 
         public void Move(Vector2 direction)
         {
@@ -20,7 +23,7 @@
         }
 
         public void Update()
-        {
+        { 
             Move(input.MoveDirection);
             AimAt(input.MousePosition);
         }
@@ -35,6 +38,7 @@
 
             //turret.Rotation = Math.Atan2(dy, dx);
         }
+
 
         //public void Shoot()
         //{

@@ -1,45 +1,22 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
 namespace Tank_Game
 {
-    internal class TurretRenderer : IRenderer
+    internal class TurretRenderer : Renderer<Turret, Rectangle>
     {
-        private readonly Canvas _gameCanvas = MainWindow.Instance.GameCanvas;
-        public readonly Rectangle body;
-        public readonly GameObject turret;
-        public readonly PlayerTank tank;
-
-        public TurretRenderer(PlayerTank tank, GameObject turret)
+        public TurretRenderer(Turret gameObject) : base(gameObject)
         {
-            this.tank = tank ?? throw new ArgumentNullException(nameof(tank));
-            this.turret = turret ?? throw new ArgumentNullException(nameof(turret));
-
-            body = new Rectangle
-            {
-                Width = 40,
-                Height = 10,
-                Fill = Brushes.DarkGreen,
-                RenderTransformOrigin = new Point(0, 0.5)
-            };
-
-            _gameCanvas.Children.Add(body);
+            body.Width = 30;
+            body.Height = 10;
+            body.Fill = Brushes.DarkGray;
         }
 
-        public void Draw()
+        public override void Update()
         {
-            Canvas.SetLeft(body, tank.Position.x + 20);
-            Canvas.SetTop(body, tank.Position.y + 15);
-
-            body.RenderTransform =
-                new RotateTransform(turret.Rotation * 180 / Math.PI);
-        }
-
-        public void Dispose()
-        {
-            if (body != null) _gameCanvas.Children.Remove(body);
+            Canvas.SetLeft(body, gameObject.Position.x - 20);
+            Canvas.SetTop(body, gameObject.Position.y - 20);
         }
     }
 }

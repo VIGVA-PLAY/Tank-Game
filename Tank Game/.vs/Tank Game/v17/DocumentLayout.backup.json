@@ -3,60 +3,68 @@
   "WorkspaceRootPath": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\gameobjectfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\gameobjectfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\turretrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\turretrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\turret.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\turret.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\irenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\irenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\tankrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\tankrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\playertank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\playertank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\gameobjectfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\gameobjectfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\tankrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\tankrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\gameloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\gameloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\turretrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\turretrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\irenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\irenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\turret.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\turret.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\errorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\errorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\playerinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|c:\\my files\\my created programs\\c# console apps\\microsoft homework\\tank-game\\tank game\\tank game\\vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EF07408-BFBF-40CB-970A-17547763052F}|Tank Game\\Tank Game.csproj|solutionrelative:tank game\\vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,17 +74,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ErrorHandler.cs",
+              "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\ErrorHandler.cs",
+              "RelativeDocumentMoniker": "Tank Game\\ErrorHandler.cs",
+              "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\ErrorHandler.cs",
+              "RelativeToolTip": "Tank Game\\ErrorHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T08:05:19.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IRenderer.cs",
+              "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\IRenderer.cs",
+              "RelativeDocumentMoniker": "Tank Game\\IRenderer.cs",
+              "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\IRenderer.cs",
+              "RelativeToolTip": "Tank Game\\IRenderer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T07:59:10.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Renderer.cs",
+              "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\Renderer.cs",
+              "RelativeDocumentMoniker": "Tank Game\\Renderer.cs",
+              "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\Renderer.cs",
+              "RelativeToolTip": "Tank Game\\Renderer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-31T07:05:44.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "TurretRenderer.cs",
               "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\TurretRenderer.cs",
               "RelativeDocumentMoniker": "Tank Game\\TurretRenderer.cs",
               "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\TurretRenderer.cs",
               "RelativeToolTip": "Tank Game\\TurretRenderer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-30T16:01:50.635Z",
               "EditorCaption": ""
@@ -84,84 +131,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Turret.cs",
-              "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\Turret.cs",
-              "RelativeDocumentMoniker": "Tank Game\\Turret.cs",
-              "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\Turret.cs",
-              "RelativeToolTip": "Tank Game\\Turret.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T15:59:35.884Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IRenderer.cs",
-              "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\IRenderer.cs",
-              "RelativeDocumentMoniker": "Tank Game\\IRenderer.cs",
-              "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\IRenderer.cs",
-              "RelativeToolTip": "Tank Game\\IRenderer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T14:31:22.637Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "TankRenderer.cs",
               "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\TankRenderer.cs",
               "RelativeDocumentMoniker": "Tank Game\\TankRenderer.cs",
               "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\TankRenderer.cs",
               "RelativeToolTip": "Tank Game\\TankRenderer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-30T14:26:30.496Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "PlayerTank.cs",
               "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\PlayerTank.cs",
               "RelativeDocumentMoniker": "Tank Game\\PlayerTank.cs",
               "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\PlayerTank.cs",
               "RelativeToolTip": "Tank Game\\PlayerTank.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-28T12:24:19.277Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "GameObject.cs",
               "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\GameObject.cs",
               "RelativeDocumentMoniker": "Tank Game\\GameObject.cs",
               "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\GameObject.cs",
               "RelativeToolTip": "Tank Game\\GameObject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-29T09:30:22.604Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
+              "Title": "Turret.cs",
+              "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\Turret.cs",
+              "RelativeDocumentMoniker": "Tank Game\\Turret.cs",
+              "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\Turret.cs",
+              "RelativeToolTip": "Tank Game\\Turret.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T15:59:35.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "GameObjectFactory.cs",
               "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\GameObjectFactory.cs",
               "RelativeDocumentMoniker": "Tank Game\\GameObjectFactory.cs",
               "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\GameObjectFactory.cs",
               "RelativeToolTip": "Tank Game\\GameObjectFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-30T12:34:22.679Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 13,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "Tank Game\\AssemblyInfo.cs",
@@ -174,39 +208,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "Vector2.cs",
               "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\Vector2.cs",
               "RelativeDocumentMoniker": "Tank Game\\Vector2.cs",
               "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\Vector2.cs",
               "RelativeToolTip": "Tank Game\\Vector2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-29T09:21:51.808Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "GameLoop.cs",
               "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\GameLoop.cs",
               "RelativeDocumentMoniker": "Tank Game\\GameLoop.cs",
               "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\GameLoop.cs",
               "RelativeToolTip": "Tank Game\\GameLoop.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-30T08:07:12.042Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "PlayerInput.cs",
               "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\PlayerInput.cs",
               "RelativeDocumentMoniker": "Tank Game\\PlayerInput.cs",
               "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\PlayerInput.cs",
               "RelativeToolTip": "Tank Game\\PlayerInput.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-30T08:32:20.725Z",
               "EditorCaption": ""
@@ -219,14 +253,14 @@
               "RelativeDocumentMoniker": "Tank Game\\MainWindow.xaml.cs",
               "ToolTip": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\MainWindow.xaml.cs",
               "RelativeToolTip": "Tank Game\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAawBEAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-28T12:05:40.908Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
               "Title": "Bullet.cs",
               "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\Bullet.cs",
               "RelativeDocumentMoniker": "Tank Game\\Bullet.cs",
@@ -239,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 9,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\My Files\\My Created Programs\\C# console apps\\Microsoft homework\\Tank-Game\\Tank Game\\Tank Game\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Tank Game\\MainWindow.xaml",
