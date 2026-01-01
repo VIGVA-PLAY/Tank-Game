@@ -9,12 +9,14 @@
         Width="1000"
         Height="700"
         Background="Black"
-        KeyDown="Window_KeyDown"
-        KeyUp="Window_KeyUp"
-        MouseMove="Window_MouseMove"
-        MouseDown="Window_MouseDown"
+        
         >
     <Canvas x:Name="GameCanvas"
             Background="#222"
-            Focusable="True"/>
+            Focusable="True"
+            KeyDown="Window_KeyDown"
+            KeyUp="Window_KeyUp"
+            MouseMove="Window_MouseMove"
+            MouseDown="Window_MouseDown"
+            />
 </Window>
