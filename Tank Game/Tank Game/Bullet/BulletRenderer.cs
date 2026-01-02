@@ -8,8 +8,8 @@ namespace Tank_Game
     {
         public BulletRenderer(Bullet gameObject) : base(gameObject)
         {
-            body.Width = 10;
-            body.Height = 10;
+            body.Width = 20;
+            body.Height = 20;
             body.Stroke = Brushes.Black;
             body.StrokeThickness = 1;
             body.Fill = Brushes.Blue;

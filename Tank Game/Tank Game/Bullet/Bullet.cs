@@ -4,7 +4,7 @@
     {
         protected override Type RendererType => typeof(BulletRenderer);
 
-        public double Speed = 100; // pixels per second
+        public double Speed = 300; // pixels per second
 
         public void Update()
         {

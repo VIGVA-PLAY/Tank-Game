@@ -5,8 +5,9 @@
     internal class PlayerTank : GameObject, IUpdatable
     {
         protected override Type RendererType => typeof(TankRenderer);
-        public readonly PlayerInput input = new PlayerInput();
-        public readonly Turret turret = GameObjectFactory.Instance.Instantiate<Turret>();
+
+        public PlayerInput Input { get; private set; }
+        public Turret Turret { get; private set; }
         public TankRenderer Renderer { get; private set; }
 
         public double Speed = 150; // pixels per second
@@ -15,18 +16,20 @@
         {
             base.Awake();
             Renderer = GetRenderer<TankRenderer>();
-            AddChild(turret);
+            Input = new PlayerInput();
+            Turret = GameObjectFactory.Instance.Instantiate<Turret>();
+            AddChild(Turret);
         }
 
         public void Update()
         {
-            Move(input.MoveDirection);
-            turret.AimAt(input.MousePosition);
+            Move(Input.MoveDirection);
+            Turret.AimAt(Input.MousePosition);
 
-            if (input.isFirePressed)
+            if (Input.isFirePressed)
             {
-                turret.Shoot();
-                input.isFirePressed = false;
+                Turret.Shoot();
+                Input.isFirePressed = false;
             } 
         }
 

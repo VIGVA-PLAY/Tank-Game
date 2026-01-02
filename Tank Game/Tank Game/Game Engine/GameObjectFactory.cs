@@ -45,6 +45,6 @@
         public T Instantiate<T>() where T : GameObject, new() =>
             Instantiate<T>(default, 0);
 
-        public int GetGameObjectCount() => _gameObjects.Count;
+        public int GetGameObjectsCount() => _gameObjects.Count;
     }
 }

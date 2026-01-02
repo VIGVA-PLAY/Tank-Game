@@ -27,6 +27,7 @@ namespace Tank_Game
         public void Shoot()
         {
             var bullet = GameObjectFactory.Instance.Instantiate<Bullet>(GetBulletSpawnPosition(), Rotation);
+            bullet.Destroy(10);  
         }
 
         Vector2 GetBulletSpawnPosition()

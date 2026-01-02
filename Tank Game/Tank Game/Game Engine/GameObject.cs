@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal abstract class GameObject
+    internal abstract class GameObject 
     {
         Vector2 _position;
         double _rotation;
@@ -19,7 +19,7 @@
 
                 if (_children.Any())
                 {
-                    foreach (var child in _children) 
+                    foreach (var child in _children)
                         child.Position = Position + child.LocalPosition;
                 }
             }
@@ -43,6 +43,8 @@
                 _localPosition = value;
                 if (Parent is not null)
                     Position = Parent.Position + _localPosition;
+                else 
+                    Position = _localPosition;
             }
         }
 
@@ -73,18 +75,14 @@
             _renderer.Dispose();
         }
 
-        public void Destroy(int delay)
-        {
-            GameObjectFactory.Instance.Dispose(this);
-            _renderer.Dispose();
-        }
+        public void Destroy(int delay) => FunctionTimer.Start(Destroy, delay);
 
         public T GetRenderer<T>() where T : IRenderer =>
             (T)_renderer!;
 
         public void AddChild(GameObject go)
         {
-            if(go is  null) 
+            if (go is null)
                 throw new ArgumentNullException(nameof(go));
 
             if (go == this)
@@ -96,6 +94,7 @@
             go.Parent?._children.Remove(go);
 
             go.Parent = this;
+            go.Position = Position + go.LocalPosition;
             _children.Add(go);
         }
 
@@ -112,7 +111,7 @@
             return false;
         }
 
-        public void RemoveParent() 
+        public void RemoveParent()
         {
             if (Parent is not null)
             {

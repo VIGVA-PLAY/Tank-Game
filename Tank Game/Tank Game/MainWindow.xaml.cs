@@ -17,29 +17,29 @@ namespace Tank_Game
             GameCanvas.Focus();
             _gameLoop.Run();
 
-            _player = _factory.Instantiate<PlayerTank>();
+            _player = _factory.Instantiate<PlayerTank>(500, 350);
         }
 
         void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            _player?.input.KeyDown(e.Key);
+            _player?.Input.KeyDown(e.Key);
         }
 
         void Window_KeyUp(object sender, KeyEventArgs e)
         {
-            _player?.input.KeyUp(e.Key);
+            _player?.Input.KeyUp(e.Key);
         }
 
         void Window_MouseMove(object sender, MouseEventArgs e)
         {
             if(_player == null) return;
-            _player.input.MousePosition = e.GetPosition(GameCanvas);
+            _player.Input.MousePosition = e.GetPosition(GameCanvas);
         }
 
         void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
-                _player?.input.MouseDown();
+                _player?.Input.MouseDown();
         }
     }
 }

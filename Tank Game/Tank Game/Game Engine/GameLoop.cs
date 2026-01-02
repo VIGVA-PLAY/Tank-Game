@@ -10,7 +10,9 @@ namespace Tank_Game
 
     internal sealed class GameLoop
     {
-        const int TargetFPS = 60;
+        //Use reflection here in the future.
+
+        public const int TargetFPS = 200;
         DispatcherTimer _gameTimer;
         Stopwatch _stopwatch = new Stopwatch();
         public static double DeltaTime { get; private set; }
