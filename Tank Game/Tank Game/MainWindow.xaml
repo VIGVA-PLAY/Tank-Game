@@ -8,11 +8,13 @@
         Title="Tank Game"
         Width="1000"
         Height="700"
-        Background="Black"
+        Background="#222"
         
         >
     <Canvas x:Name="GameCanvas"
-            Background="#222"
+            Width="1000"
+            Height="700"
+            Background="Black"
             Focusable="True"
             KeyDown="Window_KeyDown"
             KeyUp="Window_KeyUp"

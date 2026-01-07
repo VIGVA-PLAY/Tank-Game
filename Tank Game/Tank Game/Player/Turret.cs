@@ -1,19 +1,32 @@
 ﻿
 using System.Windows;
+using System.Windows.Media;
 
 namespace Tank_Game
 {
-    internal class Turret : GameObject
+    internal class Turret : GameObject, ILateUpdate
     {
-        protected override Type RendererType => typeof(TurretRenderer);
-        public TurretRenderer Renderer { get; private set; }
-        double _turretLength;
+        public GameObject Anchor;
+        public RectRenderer Rect { get; private set; }
 
-        public override void Awake()
+        double _turretLength;
+        public Brush  BulletColor;
+        public double BulletSpeed;
+
+        protected override void OnAwake()
         {
-            base.Awake();
-            Renderer = GetRenderer<TurretRenderer>();
-            _turretLength = Renderer.body.Width;
+            Rect = AddComponent<RectRenderer>();
+            Rect.Width = 40;
+            Rect.Height = 15;
+            Rect.Pivot = new Vector2(0, Rect.Height / 2);
+            Rect.Layer = 0;
+
+            _turretLength = Rect.Width;
+        }
+
+        public void LateUpdate()
+        {
+            Position = Anchor.Position;
         }
 
         public void AimAt(Point mousePos)
@@ -27,6 +40,9 @@ namespace Tank_Game
         public void Shoot()
         {
             var bullet = GameObjectFactory.Instance.Instantiate<Bullet>(GetBulletSpawnPosition(), Rotation);
+            bullet.Speed = BulletSpeed;
+            bullet.EllipseRenderer.Fill = BulletColor;
+
             bullet.Destroy(10);  
         }
 

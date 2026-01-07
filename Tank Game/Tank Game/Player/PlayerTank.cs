@@ -1,24 +1,29 @@
 ﻿namespace Tank_Game
 {
-    using System;
+    using System.Windows.Media;
+    using System.Windows.Media.Effects;
+    using Tank_Game;
 
-    internal class PlayerTank : GameObject, IUpdatable
+    internal class PlayerTank : GameObject, IUpdate
     {
-        protected override Type RendererType => typeof(TankRenderer);
-
         public PlayerInput Input { get; private set; }
         public Turret Turret { get; private set; }
-        public TankRenderer Renderer { get; private set; }
+        public EllipseRenderer Ellipse { get; private set; }
 
         public double Speed = 150; // pixels per second
 
-        public override void Awake()
+        protected override void OnAwake()
         {
-            base.Awake();
-            Renderer = GetRenderer<TankRenderer>();
+            Ellipse = AddComponent<EllipseRenderer>();
+            Ellipse.Size = new Vector2(40, 40);
+            Ellipse.Pivot = Ellipse.GetCenter();
+            Ellipse.Fill = Brushes.Blue;
+            Ellipse.Layer = 1;
+
             Input = new PlayerInput();
+
             Turret = GameObjectFactory.Instance.Instantiate<Turret>();
-            AddChild(Turret);
+            Turret.Anchor = this;
         }
 
         public void Update()
@@ -30,7 +35,7 @@
             {
                 Turret.Shoot();
                 Input.isFirePressed = false;
-            } 
+            }
         }
 
         public void Move(Vector2 direction)

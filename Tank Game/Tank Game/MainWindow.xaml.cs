@@ -7,7 +7,7 @@ namespace Tank_Game
     {
         PlayerTank _player;
         GameObjectFactory _factory = GameObjectFactory.Instance;
-        GameLoop _gameLoop => GameLoop.Instance;
+        GameLoop GameLoop => GameLoop.Instance;
 
         public static MainWindow Instance => (Application.Current.MainWindow as MainWindow)!;
 
@@ -15,14 +15,19 @@ namespace Tank_Game
         {
             InitializeComponent();
             GameCanvas.Focus();
-            _gameLoop.Run();
+            GameLoop.Run();
 
-            _player = _factory.Instantiate<PlayerTank>(500, 350);
+            _player = _factory.Instantiate<PlayerTank>(GameCanvas.Width / 2, GameCanvas.Height / 2);
         }
 
         void Window_KeyDown(object sender, KeyEventArgs e)
         {
             _player?.Input.KeyDown(e.Key);
+
+            //if (e.Key == Key.Right) _player.Rotation += Math.PI / 12;
+            //if (e.Key == Key.Left) _player.Rotation -= Math.PI / 12;
+            //if (e.Key == Key.Up) _player.Turret.LocalPosition += Vector2.UnitX * 10;
+            //if (e.Key == Key.Down) _player.Turret.LocalPosition -= Vector2.UnitX * 10;
         }
 
         void Window_KeyUp(object sender, KeyEventArgs e)
