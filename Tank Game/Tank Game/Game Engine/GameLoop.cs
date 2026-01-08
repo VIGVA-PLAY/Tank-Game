@@ -20,69 +20,6 @@ namespace Tank_Game
 
     internal interface IUpdatable { }
 
-    internal class UpdateManager<T> where T : class
-    {
-        readonly List<T> _activeList = new();
-        readonly List<T> _toAdd = new();
-        readonly List<T> _toRemove = new();
-
-        public int Count => _activeList.Count + _toAdd.Count;
-
-        public void Register(T item)
-        {
-            if (item == null) return;
-            if (!_activeList.Contains(item) && !_toAdd.Contains(item))
-                _toAdd.Add(item);
-        }
-
-        public void Unregister(T item)
-        {
-            if (item == null) return;
-            if (_activeList.Contains(item) && !_toRemove.Contains(item))
-                _toRemove.Add(item);
-
-            _toAdd.Remove(item);
-        }
-
-        public void ProcessPendingChanges()
-        {
-            if (_toRemove.Count != 0)
-            {
-                foreach (var item in _toRemove)
-                    _activeList.Remove(item);
-                _toRemove.Clear();
-            }
-
-            if (_toAdd.Count != 0)
-            {
-                _activeList.AddRange(_toAdd);
-                _toAdd.Clear();
-            }
-        }
-
-        public void ProcessAll(Action<T> action)
-        {
-            foreach (var item in _activeList)
-            {
-                try
-                {
-                    action(item);
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"Error processing [{item.GetType().Name}]: {ex.Message}");
-                }
-            }
-        }
-
-        public void Clear()
-        {
-            _activeList.Clear();
-            _toAdd.Clear();
-            _toRemove.Clear();
-        }
-    }
-
     internal sealed class GameLoop
     {
         public const int TargetFPS = 120;
@@ -106,16 +43,14 @@ namespace Tank_Game
         public static double TimeScale { get; set; } = 1.0;
         public double CurrentFPS => _currentFPS;
 
-        public event Action OnUpdate;
-
         //Singleton
         static readonly Lazy<GameLoop> _instance = new(() => new GameLoop());
         public static GameLoop Instance => _instance.Value;
         GameLoop() { }
 
-        readonly UpdateManager<IUpdate> _updateRegitry = new();
-        readonly UpdateManager<IFixedUpdate> _fixedUpdateRegistry = new();
-        readonly UpdateManager<ILateUpdate> _lateUpdateRegistry = new();
+        readonly UpdatableRegistry<IUpdate> _updateRegitry = new();
+        readonly UpdatableRegistry<IFixedUpdate> _fixedUpdateRegistry = new();
+        readonly UpdatableRegistry<ILateUpdate> _lateUpdateRegistry = new();
 
         public void Run()
         {
@@ -191,8 +126,6 @@ namespace Tank_Game
             DeltaTime = UnscaledDeltaTime * TimeScale;
             Time += DeltaTime;
 
-            OnUpdate?.Invoke();
-
             UpdateFPSCounter();
             ProcessPendingChanges();
 
@@ -235,7 +168,7 @@ namespace Tank_Game
             if (obj is ILateUpdate lateUpdatable) _lateUpdateRegistry.Register(lateUpdatable);
         }
 
-        public void Unregister<T>(T obj) where T : class
+        public void TryUnregister<T>(T obj) where T : class
         {
             if (obj is null) return;
             if (obj is IUpdate updatable) _updateRegitry.Unregister(updatable);

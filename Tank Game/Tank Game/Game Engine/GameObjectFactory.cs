@@ -14,44 +14,18 @@
             if (go == null) return;
             if (!_gameObjects.Remove(go)) return;
 
-            UnregisterFromGameLoop(go);
-        }
-
-        void RegisterToGameLoop(GameObject go)
-        {
-            if (go is IUpdate updatable)
-                GameLoop.Instance.TryRegister(updatable);
-
-            if (go is IFixedUpdate fixedUpdatable)
-                GameLoop.Instance.TryRegister(fixedUpdatable);
-
-            if (go is ILateUpdate lateUpdatable)
-                GameLoop.Instance.TryRegister(lateUpdatable);
-        }
-
-        void UnregisterFromGameLoop(GameObject go)
-        {
-            if (go is IUpdate updatable)
-                GameLoop.Instance.Unregister(updatable);
-
-            if (go is IFixedUpdate fixedUpdatable)
-                GameLoop.Instance.Unregister(fixedUpdatable);
-
-            if (go is ILateUpdate lateUpdatable)
-                GameLoop.Instance.Unregister(lateUpdatable);
+            GameLoop.Instance.TryUnregister(go);
         }
 
         public T Instantiate<T>(Vector2 position = default, double rotation = 0)
             where T : GameObject, new()
         {
-            T go = new();
-            go.Position = position;
-            go.Rotation = rotation;
+            T go = new() { Position = position, Rotation = rotation };
 
             _gameObjects.Add(go);
 
             go.Awake();
-            RegisterToGameLoop(go);
+            GameLoop.Instance.TryRegister(go);
 
             return go;
         }

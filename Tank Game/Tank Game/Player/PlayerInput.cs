@@ -5,7 +5,7 @@ namespace Tank_Game
 {
     internal class PlayerInput
     {
-        public Point MousePosition { get; set; }
+        public Vector2 MousePosition { get; set; }
         public bool isFirePressed;
 
         readonly HashSet<Key> _keys = new();

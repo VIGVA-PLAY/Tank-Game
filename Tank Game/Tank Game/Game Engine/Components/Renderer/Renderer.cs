@@ -1,9 +1,7 @@
-﻿using System.ComponentModel;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using System.Windows;
-using System.Windows.Ink;
 
 namespace Tank_Game
 {
@@ -12,15 +10,45 @@ namespace Tank_Game
         protected readonly Canvas gameCanvas = MainWindow.Instance.GameCanvas;
         protected Shape body;
         Vector2 _pivot;
-        public Vector2 Pivot 
+
+        public Vector2 Size
+        {
+            get => new(Width, Width);
+            set
+            {
+                Width = value.x;
+                Height = value.y;
+            }
+        }
+
+        public double Width
+        {
+            get => body.Width;
+            set
+            {
+                body.Width = value <= 0 ? 0 : value;
+                UpdatePosition();
+            }
+        }
+
+        public double Height
+        {
+            get => body.Height;
+            set
+            {
+                body.Height = value <= 0 ? 0 : value;
+                UpdatePosition();
+            }
+        }
+
+        public Vector2 Pivot
         {
             get => _pivot;
             set
             {
-                if(value == _pivot) return;
+                if (_pivot == value) return;
                 _pivot = value;
-                if (body.Height * body.Width <= 0) return;
-                body.RenderTransformOrigin = new Point(_pivot.x / body.Width, _pivot.y / body.Height);
+                body.RenderTransformOrigin = new Point(_pivot.x, _pivot.y);
                 UpdatePosition();
             }
         }
@@ -48,7 +76,7 @@ namespace Tank_Game
             get => body.Stroke;
             set => body.Stroke = value;
         }
-        
+
         protected override void OnAwake()
         {
             Update();
@@ -69,10 +97,10 @@ namespace Tank_Game
             UpdateRotation();
         }
 
-        void UpdatePosition()
+        protected void UpdatePosition()
         {
-            Canvas.SetLeft(body, gameObject.Position.x - _pivot.x);
-            Canvas.SetTop(body, gameObject.Position.y - _pivot.y);
+            Canvas.SetLeft(body, gameObject.Position.x - _pivot.x * body.Width);
+            Canvas.SetTop(body, gameObject.Position.y - _pivot.y * body.Height);
         }
 
         void UpdateRotation()

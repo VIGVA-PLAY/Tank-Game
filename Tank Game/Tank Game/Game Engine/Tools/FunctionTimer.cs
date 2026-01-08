@@ -1,74 +1,90 @@
-﻿using System.Windows.Media.Animation;
-using Tank_Game;
+﻿using Tank_Game;
 
 internal static class FunctionTimer
 {
     static readonly List<Timer> _activeTimers = new();
 
-    public class Timer
+    public class Timer : IUpdate
     {
-        readonly Action callback;
-        readonly double delay;
-        int repeatCount;
-        double timeRemaining;
+        readonly Action _callback;
+        readonly double _delay;
+        int _remainingRepeats;
+        double _timeRemaining;
+        bool _isDisposed;
 
         public Timer(Action callback, double delay, int repeatCount)
         {
-            this.callback = callback;
-            this.delay = delay;
-            this.repeatCount = repeatCount;
-            timeRemaining = delay;
+            _callback = callback ?? throw new ArgumentNullException(nameof(callback));
+            _delay = delay;
+            _remainingRepeats = repeatCount;
+            _timeRemaining = delay;
 
-            GameLoop.Instance.OnUpdate += Update;
+            GameLoop.Instance.TryRegister(this);
         }
 
-        void Update()
+        public void Update()
         {
-            timeRemaining -= GameLoop.DeltaTime;
+            if (_isDisposed) return;
 
-            if (timeRemaining <= 0) 
+            _timeRemaining -= GameLoop.DeltaTime;
+
+            if (_timeRemaining <= 0)
             {
-                if (repeatCount < 0)
+                _callback?.Invoke();
+
+                if (_remainingRepeats > 0)
                 {
-                    callback?.Invoke();
-                    return;
+                    _remainingRepeats--;
+                    if (_remainingRepeats == 0)
+                    {
+                        Dispose();
+                        return;
+                    }
                 }
-
-                repeatCount--;
-
-                if (repeatCount == 0)
+                else if (_remainingRepeats == 0)
                 {
                     Dispose();
                     return;
                 }
-              
-                timeRemaining = delay;
+
+                _timeRemaining = _delay;
             }
         }
 
         public void Dispose()
         {
-            GameLoop.Instance.OnUpdate -= Update;
+            if (_isDisposed) return;
+            _isDisposed = true;
+
+            GameLoop.Instance.TryUnregister(this);
             _activeTimers.Remove(this);
         }
     }
 
-    public static void Start(Action onComplete, double delay) =>
-        StartRepeating(onComplete, delay, 1);
+    public static Timer Start(Action callback, double delay) =>
+         StartRepeating(callback, delay, 1);
 
-    public static void StartRepeating(Action onComplete, double delay, int repeatCount)
+    public static Timer StartRepeating(Action callback, double delay, int repeatCount)
     {
-        if (onComplete != null) return;
-        _activeTimers.Add(new Timer(onComplete, delay, repeatCount));
+        if (callback == null)
+            throw new ArgumentNullException(nameof(callback));
+
+        var timer = new Timer(callback, delay, repeatCount);
+        _activeTimers.Add(timer);
+        return timer;
     }
 
-    public static void StartRepeating(Action onComplete, double delay) =>
-        StartRepeating(onComplete,  delay, -1);
+    public static Timer StartRepeating(Action callback, double delay) =>
+         StartRepeating(callback, delay, -1);
 
     public static void Stop(Timer timer) => timer?.Dispose();
 
     public static void StopAll()
     {
-        foreach(Timer timer in _activeTimers) timer.Dispose();
-    } 
+        var timersCopy = _activeTimers.ToList();
+        foreach (var timer in timersCopy)
+            timer.Dispose();
+
+        _activeTimers.Clear();
+    }
 }

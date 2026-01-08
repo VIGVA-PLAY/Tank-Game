@@ -1,9 +1,12 @@
 ﻿namespace Tank_Game
 {
     using System;
+    using System.Windows.Controls;
 
     internal abstract class GameObject
     {
+        protected readonly Canvas gameCanvas = MainWindow.Instance.GameCanvas;
+
         bool _awoken;
 
         readonly List<GameObject> _children = new();
@@ -15,6 +18,7 @@
         double _localRotation;
 
         public event Action OnTransform;
+        public GameObject Parent { get; private set; }
 
         public Vector2 Position
         {
@@ -36,7 +40,6 @@
                 if (Math.Abs(_rotation - value) < 0.001) return;
                 _rotation = value;
                 OnTransform?.Invoke();
-                UpdateChildrenPositions();
                 UpdateChildrenRotations();
             }
         }
@@ -61,8 +64,113 @@
             }
         }
 
-        public GameObject Parent { get; private set; }
-       
+        void UpdateWorldPosition()
+        {
+            if (Parent is not null)
+            {
+                double radians = Parent.Rotation;
+                double cos = Math.Cos(radians);
+                double sin = Math.Sin(radians);
+
+                Vector2 rotatedLocal = new(
+                    _localPosition.x * cos - _localPosition.y * sin,
+                    _localPosition.x * sin + _localPosition.y * cos
+                );
+
+                Position = Parent.Position + rotatedLocal;
+            }
+            else
+                Position = _localPosition;
+        }
+
+        void UpdateWorldRotation()
+        {
+            if (Parent is not null)
+                Rotation = Parent.Rotation + _localRotation;
+            else
+                Rotation = _localRotation;
+        }
+
+        void UpdateChildrenPositions()
+        {
+            if (_children.Count == 0) return;
+
+            foreach (var child in _children)
+                child.UpdateWorldPosition();
+        }
+
+        void UpdateChildrenRotations()
+        {
+            if (_children.Count == 0) return;
+
+            foreach (var child in _children)
+            {
+                child.UpdateWorldPosition();
+                child.UpdateWorldRotation();
+            }
+        }
+
+        public void AddChild(GameObject child)
+        {
+            if (child is null)
+                throw new ArgumentNullException(nameof(child));
+
+            if (child == this)
+                throw new InvalidOperationException("GameObject cannot be its own child.");
+
+            if (IsDescendantOf(child))
+                throw new InvalidOperationException("Cannot create cyclic hierarchy.");
+
+            child.DetachFromParent();
+
+            child.Parent = this;
+            _children.Add(child);
+
+            child.UpdateWorldPosition();
+            child.UpdateWorldRotation();
+        }
+
+        public bool IsDescendantOf(GameObject target)
+        {
+            GameObject current = Parent;
+
+            while (current is not null)
+            {
+                if (current == target) return true;
+                current = current.Parent;
+            }
+
+            return false;
+        }
+
+        public void RemoveChild(GameObject child)
+        {
+            if (child is null || child.Parent != this) return;
+
+            _children.Remove(child);
+            child.Parent = null;
+
+            child._localPosition = child._position;
+            child._localRotation = child._rotation;
+        }
+
+        public void SetParent(GameObject newParent) => newParent?.AddChild(this);
+        public void DetachFromParent() => Parent?.RemoveChild(this);
+
+        public void RemoveParent()
+        {
+            if (Parent is null) return;
+            Vector2 worldPos = _position;
+            double worldRot = _rotation;
+
+            DetachFromParent();
+
+            _localPosition = worldPos;
+            _localRotation = worldRot;
+            _position = worldPos;
+            _rotation = worldRot;
+        }
+
         public void Awake()
         {
             if (_awoken) return;
@@ -130,101 +238,6 @@
             _children.Clear();
         }
 
-        public void AddChild(GameObject child)
-        {
-            if (child is null)
-                throw new ArgumentNullException(nameof(child));
-
-            if (child == this)
-                throw new InvalidOperationException("GameObject cannot be its own child.");
-
-            if (IsDescendantOf(child))
-                throw new InvalidOperationException("Cannot create cyclic hierarchy.");
-
-            child.DetachFromParent();
-
-            child.Parent = this;
-            _children.Add(child);
-
-            child.Position = child.Parent.Position;
-        }
-
-        public bool IsDescendantOf(GameObject target)
-        {
-            GameObject current = Parent;
-
-            while (current is not null)
-            {
-                if (current == target) return true;
-                current = current.Parent;
-            }
-
-            return false;
-        }
-
-        public void RemoveChild(GameObject child)
-        {
-            if (child is null || child.Parent != this) return;
-
-            _children.Remove(child);
-            child.Parent = null;
-        }
-
-        void DetachFromParent() => Parent?.RemoveChild(this);
-
-        public void RemoveParent()
-        {
-            if (Parent is null) return;
-
-            DetachFromParent();
-
-            LocalPosition = Position;
-            LocalRotation = Rotation;
-        }
-
-        void UpdateWorldPosition()
-        {
-            if (Parent is not null)
-            {
-                double radians = Parent.Rotation;
-                double cos = Math.Cos(radians);
-                double sin = Math.Sin(radians);
-
-                Vector2 rotatedLocal = new(
-                    _localPosition.x * cos - _localPosition.y * sin,
-                    _localPosition.x * sin + _localPosition.y * cos
-                );
-
-                Position = Parent.Position + rotatedLocal;
-            }
-            else
-                Position = _localPosition;
-        }
-
-        void UpdateWorldRotation()
-        {
-            if (Parent is not null)
-                Rotation = Parent.Rotation + _localRotation;
-            else
-                Rotation = _localRotation;
-        }
-
-        void UpdateChildrenPositions()
-        {
-            if (_children.Count == 0) return;
-
-            foreach (var child in _children)
-                child.UpdateWorldPosition();
-        }
-
-        void UpdateChildrenRotations()
-        {
-            if (_children.Count == 0) return;
-
-            foreach (var child in _children)
-                child.UpdateWorldRotation();
-        }
-
         public GameObject FindChild(Predicate<GameObject> predicate) =>
              _children.FirstOrDefault(c => predicate?.Invoke(c) ?? false);
 
@@ -243,6 +256,10 @@
 
         public int GetChildCount() => _children.Count;
         public bool HasChildren() => _children.Count > 0;
+
+        public virtual void OnCollisionEnter(Collider other) { }
+        public virtual void OnCollisionStay(Collider other) { } 
+        public virtual void OnCollisionExit(Collider other) { }
     }
 }
 
