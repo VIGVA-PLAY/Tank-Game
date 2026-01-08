@@ -1,6 +1,6 @@
 ﻿using Tank_Game;
 
-internal static class FunctionTimer
+internal static class Function
 {
     static readonly List<Timer> _activeTimers = new();
 
@@ -61,7 +61,7 @@ internal static class FunctionTimer
         }
     }
 
-    public static Timer Start(Action callback, double delay) =>
+    public static Timer DelayInvoke(Action callback, double delay) =>
          StartRepeating(callback, delay, 1);
 
     public static Timer StartRepeating(Action callback, double delay, int repeatCount)

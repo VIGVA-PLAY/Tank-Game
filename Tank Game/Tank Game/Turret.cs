@@ -11,6 +11,7 @@ namespace Tank_Game
         public Brush BulletColor;
         public double BulletSpeed = 300;
         public double BulletDiameter = 10;
+        public double BulletDamage;
         public BulletType BulletType;
 
         protected override void OnAwake()

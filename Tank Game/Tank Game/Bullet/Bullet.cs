@@ -17,6 +17,14 @@ namespace Tank_Game
 
         public BulletType Type;
 
+        double _damage;
+        public double Damage 
+        {
+            get => _damage; 
+            set => _damage = value <= 0 ? 0 : value;
+
+        }
+
         public double Diameter
         {
             get => Ellipse.Width;
@@ -57,7 +65,11 @@ namespace Tank_Game
             }
             else if (other.gameObject is PlayerTank player)
             {
-                if (Type == BulletType.Enemy) Destroy();
+                if (Type == BulletType.Enemy)
+                {
+                    player.ApplyDamage(Damage);
+                    Destroy();
+                }
             }
             else if (other.gameObject is MiniTank enemy)
             {

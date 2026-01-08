@@ -12,7 +12,8 @@ namespace Tank_Game.Enemies
         PlayerTank _player;
         Vector2 _destination;
         double _maxDestinationDistance = 100;
-        double _destinationChangeDelay = 2;
+        double _maxdestinationChangeDelay = 4;
+        double _mindestinationChangeDelay = 2;
 
 
         public double Health { get; private set; } = 100;
@@ -20,8 +21,8 @@ namespace Tank_Game.Enemies
         double _diameter = 25;
         double shootDelay = 1;
 
-        FunctionTimer.Timer _shootingTimer;
-        FunctionTimer.Timer _destinationChangeTimer;
+        Function.Timer _shootingTimer;
+        Function.Timer _destinationChangeTimer;
 
         protected override void OnAwake()
         {
@@ -40,6 +41,7 @@ namespace Tank_Game.Enemies
             Turret.BulletDiameter = 7;
             Turret.BulletSpeed = 100;
             Turret.BulletColor = Brushes.Red;
+            Turret.BulletDamage = 5;
 
             Collider = AddComponent<CircleCollider>();
             Collider.Radius = _diameter / 2;
@@ -86,18 +88,19 @@ namespace Tank_Game.Enemies
             Position += direction * Speed * GameLoop.DeltaTime;
         }
 
-        public void StartShooting() => _shootingTimer = FunctionTimer.StartRepeating(Turret.Shoot, shootDelay);
+        public void StartShooting() => _shootingTimer = Function.StartRepeating(Turret.Shoot, shootDelay);
         public void StopShooting() 
         {
             _shootingTimer?.Dispose();
             _shootingTimer = null;
         }
+
         public void StartMoving() 
         {
-            _destinationChangeTimer = FunctionTimer.StartRepeating
+            _destinationChangeTimer = Function.StartRepeating
             (
                 () => _destination = GetRandomDestination(),
-                _destinationChangeDelay
+                _mindestinationChangeDelay
             );
         }
 

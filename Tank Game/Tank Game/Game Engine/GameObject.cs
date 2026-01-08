@@ -194,7 +194,7 @@
             GameObjectFactory.Instance.Delete(this);
         }
 
-        public void Destroy(double delay) => FunctionTimer.Start(Destroy, delay);
+        public void Destroy(double delay) => Function.DelayInvoke(Destroy, delay);
 
         public T AddComponent<T>() where T : Component, new()
         {

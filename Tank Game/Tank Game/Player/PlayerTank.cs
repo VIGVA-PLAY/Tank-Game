@@ -10,6 +10,7 @@
         public CircleCollider Collider { get; private set; }
 
         public double Speed = 150; // pixels per second
+        public double Health { get; private set; } = 100;
         double _diameter = 40; 
 
         protected override void OnAwake()
@@ -57,6 +58,20 @@
             var clampedPosition = new Vector2(clampedX, clampedY);
 
             Position = clampedPosition;
+        }
+
+        public void ApplyDamage(double amount)
+        {
+            if (amount <= 0 || Health <= 0) return;
+            Health -= amount;
+
+            if (Health <= 0) Die();
+        }
+
+        public void Die()
+        {
+            Turret.Destroy();
+            Destroy();
         }
     }
 }
